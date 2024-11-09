@@ -6,7 +6,11 @@ import 'package:vendor_multi_store/views/screens/authentication/register_screen.
 import 'package:vendor_multi_store/views/screens/main_vendor_screen.dart';
 
 void main() {
-  runApp(const ProviderScope(child: MainApp()));
+  runApp(
+    const ProviderScope(
+      child: MainApp(),
+    ),
+  );
 }
 
 class MainApp extends ConsumerWidget {

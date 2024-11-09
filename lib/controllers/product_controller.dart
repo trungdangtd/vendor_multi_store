@@ -7,7 +7,7 @@ import 'package:vendor_multi_store/services/manage_http_response.dart';
 import 'package:http/http.dart' as http;
 
 class ProductController {
-  void uploadProduct({
+  Future<void> uploadProduct({
     required String productName,
     required double productPrice,
     required int quantity,
