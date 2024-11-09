@@ -1,6 +1,4 @@
 import 'dart:io';
-import 'dart:nativewrappers/_internal/vm/lib/ffi_allocation_patch.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
@@ -15,6 +13,7 @@ class UploadScreen extends ConsumerStatefulWidget {
   const UploadScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _UploadScreenState createState() => _UploadScreenState();
 }
 
@@ -26,7 +25,7 @@ class _UploadScreenState extends ConsumerState<UploadScreen> {
   Category? selectedCategory;
   Subcategory? selectedSubCategory;
   late String productName;
-  late double productPrice;
+  late int productPrice;
   late int quantity;
   late String description;
 
@@ -130,7 +129,7 @@ class _UploadScreenState extends ConsumerState<UploadScreen> {
                     child: TextFormField(
                       keyboardType: TextInputType.number,
                       onChanged: (value) {
-                        productPrice = double.parse(value);
+                        productPrice = int.parse(value);
                       },
                       validator: (value) {
                         if (value!.isEmpty) {

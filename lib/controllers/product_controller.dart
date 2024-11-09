@@ -9,7 +9,7 @@ import 'package:http/http.dart' as http;
 class ProductController {
   Future<void> uploadProduct({
     required String productName,
-    required double productPrice,
+    required int productPrice,
     required int quantity,
     required String description,
     required String category,
