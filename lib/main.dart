@@ -28,20 +28,22 @@ class MainApp extends ConsumerWidget {
     }
 
     return MaterialApp(
-        home: FutureBuilder(
-            future: checkTokenAndSetUser(ref),
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return const Scaffold(
-                  body: Center(
-                    child: CircularProgressIndicator(),
-                  ),
-                );
-              }
-              final vendor = ref.watch(vendorProvider);
-              return vendor != null
-                  ? const MainVendorScreen()
-                  : const RegisterScreen();
-            }));
+      home: FutureBuilder(
+        future: checkTokenAndSetUser(ref),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Scaffold(
+              body: Center(
+                child: CircularProgressIndicator(),
+              ),
+            );
+          }
+          final vendor = ref.watch(vendorProvider);
+          return vendor != null
+              ? const MainVendorScreen()
+              : const RegisterScreen();
+        },
+      ),
+    );
   }
 }
