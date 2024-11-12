@@ -5,4 +5,9 @@ class CurrencyFormatter {
     final formatter = NumberFormat.currency(locale: 'vi_VN', symbol: '₫');
     return formatter.format(amount);
   }
+
+  static String formatToVNDDouble(double amount) {
+    final formatter = NumberFormat.currency(locale: 'vi_VN', symbol: '₫');
+    return formatter.format(amount);
+  }
 }
